@@ -1,0 +1,28 @@
+.hero
+	background: url('../../images/header/header-bg.jpg') center no-repeat
+	background-size: cover
+	padding: 153px 0
+
+	&__city
+		+LatoRegular
+		font-size: 14px
+		margin-bottom: 5px
+	&__title
+		+RubikBold
+		font-size: 62px
+		margin-bottom: 15px
+	&__subtitle
+		+LatoBold
+		font-size: 20px
+		margin-bottom: 40px
+	&__button
+		background: $white
+		color: $black
+		&:before
+			background: $orange
+		&:after
+			background: $white
+		&:hover
+			color: $white
+			background: $orange
+

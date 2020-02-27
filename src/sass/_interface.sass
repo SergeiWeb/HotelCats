@@ -1,0 +1,111 @@
+*,*:before,*:after
+	box-sizing: border-box
+
+
+$black: #1A212F
+$white: #ffffff
+$orange: #FF7236
+$yellow: #FAC663
+$grey_light: #E1E1E1
+
+
+a
+	color: $black
+	text-decoration: none
+
+body
+	// background: #bdbdbd
+	font-family: 'Lato', sans-serif
+	color: $black
+	overflow-x: hidden
+
+img
+	display: block
+	max-width: 100%
+	height: auto
+
+.wrapper
+	width: 100%
+	min-height: 100%
+	overflow: hidden
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+.container
+	max-width: 1170px
+	width: 100%
+	margin: 0 auto
+	&-lg
+		max-width: 970px
+		width: 100%
+		margin: 0 auto
+
+.button
+	+LatoBold
+	font-size: 16px
+	color: $white
+	display: inline-block
+	background: $orange
+	position: relative
+	border-radius: 25px
+	padding: 17px 25px
+	padding-right: 58px
+	max-width: 206px
+	max-height: 50px
+	transition: all .4s linear
+	box-shadow: 0px 5px 25px rgba(26, 33, 47, 0.1)
+	&:before, &:after
+		position: absolute
+		content: ''
+		display: block
+		transition: all .2s linear
+	&:before
+		width: 100%
+		height: 100%
+		max-width: 36px
+		max-height: 36px
+		background: $white
+		border-radius: 50%
+		top: 7px
+		right: 7px
+		z-index: 2
+	&:after
+		width: 100%
+		height: 100%
+		max-width: 21px
+		max-height: 18px
+		top: 16px
+		right: 14px
+		mask-image: url('../../images/header/paw.svg')
+		mask-size: auto
+		background: $orange
+		z-index: 3
+	&:hover
+		color: $black
+		background: $white
+		box-shadow: 0px 0px 10px rgba(26, 33, 47, 0.1)
+		&:before
+			top: 5px
+			right: 5px
+			max-width: 40px
+			max-height: 40px
+			border-radius: 25px
+
+
+
+.section
+	padding-top: 140px
+	&-title
+		+RubikBold
+		font-size: 36px
+		text-align: center
+	&__title
+		margin-bottom: 70px
+
+
+
+// Styles Blocks
+
+.header
+	margin-top: 76px

@@ -1,0 +1,31 @@
+@mixin LatoRegular {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+
+@mixin LatoBold {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+}
+
+@mixin LatoBlack {
+	font-family: 'Lato', sans-serif;
+	font-weight: 900;
+}
+
+// Rubik
+
+@mixin RubikRegular {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+}
+
+@mixin RubikMedium {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 500;
+}
+
+@mixin RubikBold {
+	font-family: 'Rubik', sans-serif;
+	font-weight: 700;
+}

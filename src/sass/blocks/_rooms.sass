@@ -1,0 +1,104 @@
+.rooms
+	background: url('../../images/rooms/fish-bg.png') top 150px left no-repeat
+	background-size: auto
+
+	&-wrap
+		position: relative
+	&-row
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+	&-column
+		width: 100%
+	&__column
+	&__card
+	&-card
+		display: flex
+		justify-content: space-between
+		align-items: center
+		position: relative
+		padding: 0 50px
+		&__image
+	&__button
+		margin-top: 10px
+	&-info
+		background: $white
+		padding: 33px 100px
+		padding-right: 120px
+		box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25)
+		position: absolute
+		right: 70px
+		border-radius: 8px
+		&__title
+			+RubikMedium
+			font-size: 22px
+			margin-bottom: 30px
+		&__ul
+			margin-left: 20px
+		&__li
+			+LatoRegular
+			font-size: 16px
+			margin: 20px 0
+			position: relative
+			&:after
+				content: ''
+				top: 3px
+				left: -20px
+				width: 13px
+				height: 13px
+				position: absolute
+				background: $yellow
+				border-radius: 50%
+
+	&-slider
+		&__dots
+			display: flex
+			justify-content: center
+			align-items: center
+			margin-top: 55px
+			transition: all 0.3s linear
+			li
+				width: 10px
+				height: 10px
+				margin: 0 6px
+				background: $grey_light
+				border-radius: 50%
+				transition: all 0.3s linear
+				&.slick-active
+					background: $yellow
+				&:hover
+					cursor: pointer
+					background: $yellow
+				button
+					display: none
+	&-nav
+		display: flex
+		justify-content: center
+		align-items: center
+	&__nav
+		position: absolute
+		bottom: -15px
+		right: 70px
+	&-arrows
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 50%
+		margin: 0 5px
+		border: none
+		width: 36px
+		height: 36px
+		background: $white
+		box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.25)
+		transition: all 0.3s linear
+		&:hover
+			cursor: pointer
+			box-shadow: none
+		&:active
+			background: rgba($orange, 0.35)
+		&.left-arrow
+			&:active
+				transform: translateX(-5px)
+		&.right-arrow
+			&:active
+				transform: translateX(5px)

@@ -1,0 +1,25 @@
+.navbar
+	background: $white
+	position: absolute
+	padding: 12px 0
+	width: 100%
+	left: 0
+	top: 0
+
+.nav
+	display: flex
+	justify-content: space-between
+	align-items: center
+	&-ul
+		display: flex
+		align-items: center
+		li
+			margin: 0 30px
+			&:last-child
+				margin-right: 0
+		&__link
+			+LatoBold
+			font-size: 16px
+			transition: all 0.3s ease-out
+			&:hover
+				color: $orange

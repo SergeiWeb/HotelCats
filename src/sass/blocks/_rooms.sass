@@ -2,12 +2,6 @@
 	background: url('../../images/rooms/fish-bg.png') top 150px left no-repeat
 	background-size: auto
 
-	&-wrap
-		position: relative
-	&-row
-		display: flex
-		justify-content: center
-		flex-wrap: wrap
 	&-column
 		width: 100%
 	&__column
@@ -49,56 +43,3 @@
 				position: absolute
 				background: $yellow
 				border-radius: 50%
-
-	&-slider
-		&__dots
-			display: flex
-			justify-content: center
-			align-items: center
-			margin-top: 55px
-			transition: all 0.3s linear
-			li
-				width: 10px
-				height: 10px
-				margin: 0 6px
-				background: $grey_light
-				border-radius: 50%
-				transition: all 0.3s linear
-				&.slick-active
-					background: $yellow
-				&:hover
-					cursor: pointer
-					background: $yellow
-				button
-					display: none
-	&-nav
-		display: flex
-		justify-content: center
-		align-items: center
-	&__nav
-		position: absolute
-		bottom: -15px
-		right: 70px
-	&-arrows
-		display: flex
-		justify-content: center
-		align-items: center
-		border-radius: 50%
-		margin: 0 5px
-		border: none
-		width: 36px
-		height: 36px
-		background: $white
-		box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.25)
-		transition: all 0.3s linear
-		&:hover
-			cursor: pointer
-			box-shadow: none
-		&:active
-			background: rgba($orange, 0.35)
-		&.left-arrow
-			&:active
-				transform: translateX(-5px)
-		&.right-arrow
-			&:active
-				transform: translateX(5px)

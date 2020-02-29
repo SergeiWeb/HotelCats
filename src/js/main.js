@@ -16,9 +16,9 @@ $(window).ready(function() {
 	rewiewsSlider.slick({
 		slidesToShow: 2,
 		slidesToScroll: 1,
-		infinite: true,
+		infinite: false,
 		dots: true,
-		dotsClass: 'slider__dots',
+		dotsClass: 'slider__dots rewievs-slider__dots',
 		prevArrow: $('.rewievs-left__arrow'),
 		nextArrow: $('.rewievs-right__arrow'),
 	});

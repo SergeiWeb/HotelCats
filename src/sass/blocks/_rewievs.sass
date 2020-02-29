@@ -1,14 +1,23 @@
 .rewievs
 	background: url('../../images/rewievs/paw-bg.png') top right no-repeat
 	background-size: auto
+	&-wrap
+		.slider__nav
+			right: 200px
 	&-slider
+		padding-left: 130px
+		&__nav
+			right: 230px
+		&__dots
+			margin-right: 70px
 		.slick-list
 			overflow-y: visible
 	&-column
+		max-width: 560px
 		&__card
-			padding: 35px 38px 70px 70px
+			padding: 35px 30px 50px 60px
 	&__column
-		margin: 0 15px
+		margin: 20px 15px
 	&-text
 		+LatoBold
 		font-size: 16px

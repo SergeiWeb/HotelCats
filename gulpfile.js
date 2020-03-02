@@ -1,39 +1,42 @@
 "use strict ";
 
-let gulp         = require('gulp'),
-		autoprefixer = require('gulp-autoprefixer'),
-		babel        = require('gulp-babel'),
-		uglify       = require('gulp-uglify'),
-		sass         = require('gulp-sass'),
-		sourcemaps   = require('gulp-sourcemaps'),
-		concat       = require('gulp-concat'),
-		rename       = require('gulp-rename'),
-		del          = require('del'),
-		cssmin       = require('gulp-clean-css'),
-		imagemin     = require('gulp-imagemin'),
-		pngquant     = require('imagemin-pngquant'),
-		browserSync  = require('browser-sync'),
-		jshint       = require('gulp-jshint'),
-		pug          = require('gulp-pug'),
-		plumber      = require('gulp-plumber');
+let gulp          = require('gulp'),
+		autoprefixer  = require('gulp-autoprefixer'),
+		babel         = require('gulp-babel'),
+		uglify        = require('gulp-uglify'),
+		sass          = require('gulp-sass'),
+		sourcemaps    = require('gulp-sourcemaps'),
+		concat        = require('gulp-concat'),
+		rename        = require('gulp-rename'),
+		del           = require('del'),
+		cssmin        = require('gulp-clean-css'),
+		imagemin      = require('gulp-imagemin'),
+		pngquant      = require('imagemin-pngquant'),
+		browserSync   = require('browser-sync'),
+		jshint        = require('gulp-jshint'),
+		plumber       = require('gulp-plumber'),
+		pug           = require('gulp-pug'),
+		pugLinter     = require('gulp-pug-linter'),
+		htmlValidator = require('gulp-w3c-html-validator'),
+		bemValidator  = require('gulp-html-bem-validator');
 
 gulp.task('clean', function () {
 	del.sync('build/*');
 });
 
-// gulp.task('pug', function () {
-// 	return gulp.src('src/**/*.pug')
-// 		.pipe(plumber())
-// 		.pipe(gulp.dest('build/'))
-// 		.pipe(browserSync.reload({ stream: true }));
-// });
+const myReporter = (errors) => {
+	errors.map(error => console.error(error.message));
+};
 
 gulp.task('pug', function buildpug() {
 	return gulp.src('src/**/*.pug')
+		.pipe(plumber())
+		.pipe(pugLinter({ reporter: myReporter }))
 		.pipe(pug({
 			pretty: true
 		}))
-		.pipe(plumber())
+		.pipe(htmlValidator())
+		.pipe(bemValidator())
 		.pipe(gulp.dest('build/'))
 		.pipe(browserSync.reload({ stream: true }));
 });

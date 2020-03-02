@@ -1,0 +1,181 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		// Google Fonts = Lato|Rubik
+		link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Rubik:400,500,700&display=swap" rel="stylesheet")
+		// Style Library
+		link(rel="stylesheet" href="css/lib/lib.min.css")
+		// Style
+		link(rel="stylesheet" href="css/style/main.min.css")
+		title HotelCats
+	body
+		.wrapper
+			header.header
+				include template/nav.pug
+				.hero
+					.container-lg
+						h3.hero__city Санкт-Петербург
+						h1.hero__title Котейка
+						h2.hero__subtitle Уютная гостиница для котов и кошек
+						a.hero__button.button(href="#") Забронировать
+					// /.container-lg
+				// /.hero
+			main
+				section.section.about
+					.container
+						h3.section-title.section__title Почему мы?
+						.about-row
+							.about__column
+								.about-card
+									.about-card__img
+										img(src="images/about/img-one.svg" alt="About Image")
+									h5.about-card__title.about__title Комфортная температура
+									p.about-card__text
+										| Во всех номерах поддерживается комфортная температура в пределах
+										| 23 - 25 градусов. В каждом номере можно дополнительно отрегулировать температуру.
+							.about__column
+								.about-card
+									.about-card__img
+										img(src="images/about/img-two.svg" alt="About Image")
+									h5.about-card__title.about__title Видеонаблюдение
+									p.about-card__text
+										| Мы предоставляем доступ в нашу систему. Вы сможете следить
+										| за своим питомцем со своего смартфона или компьютера.
+							.about__column
+								.about-card
+									.about-card__img
+										img(src="images/about/img-three.svg" alt="About Image")
+									h5.about-card__title.about__title Услуги Зоотакси
+									p.about-card__text Мы приедем за вашим питомцем в любой район Санкт-Петербурга.
+							.about__column
+								.about-card
+									.about-card__img
+										img(src="images/about/img-four.svg" alt="About Image")
+									h5.about-card__title.about__title Сбалансированное питание
+									p.about-card__text
+										| Вы можете привезти свой кормили доверить рацион своего
+										| питомца нашим профессионалам.
+							.about__column
+								.about-card
+									.about-card__img
+										img(src="images/about/img-five.svg" alt="About Image")
+									h5.about-card__title.about__title Ежедневные прогулки
+									p.about-card__text
+										| По вашему желанию мы выгуливаем вашего питомца два раза в день
+										| на специализированной закрытой территории.
+							.about__column
+								.about-card
+									.about-card__img
+										img(src="images/about/img-six.svg" alt="About Image")
+									h5.about-card__title.about__title Лучшие ветеринары
+									p.about-card__text
+										| В гостинице 24 часа дежурит ветеринарный врач, который окажет любую помощь в
+										| случае
+										| необходимости.
+					// /.container
+				// /.section about
+				section.section.rooms
+					.container
+						h3.section-title.section__title Номера
+						.slider-wrap
+							.section-row.rooms-slider
+								.rooms-column.rooms__column
+									.rooms-card.rooms__card
+										.rooms-card__image
+											img(src="images/rooms/card-slide-1.jpg" alt="Card Cat")
+										.rooms-card__info.rooms-info
+											h3.rooms-info__title Эконом плюс
+											ul.rooms-info__ul
+												li.rooms-info__li Площадь - 0,90 м2
+												li.rooms-info__li Размеры (ШхГхВ) — 90х100х180 см
+												li.rooms-info__li Цена за сутки: 200₽
+											a.rooms__button.button(href="#") Забронировать
+								.rooms-column.rooms__column
+									.rooms-card.rooms__card
+										.rooms-card__image
+											img(src="images/rooms/card-slide-2.jpg" alt="Card Cat")
+										.rooms-card__info.rooms-info
+											h3.rooms-info__title Комфорт
+											ul.rooms-info__ul
+												li.rooms-info__li Площадь - 1,13 м2
+												li.rooms-info__li Размеры (ШхГхВ) - 100х125х180 см
+												li.rooms-info__li Цена за сутки: 250₽
+											a.rooms__button.button(href="#") Забронировать
+								.rooms-column.rooms__column
+									.rooms-card.rooms__card
+										.rooms-card__image
+											img(src="images/rooms/card-slide-3.jpg" alt="Card Cat")
+										.rooms-card__info.rooms-info
+											h3.rooms-info__title Сьют
+											ul.rooms-info__ul
+												li.rooms-info__li Площадь - 1,56 м2
+												li.rooms-info__li Размеры (ШхГхВ) - 125х125х180 см
+												li.rooms-info__li Цена за сутки: 350₽
+											a.rooms__button.button(href="#") Забронировать
+							.slider-nav.slider__nav
+								button.slider-arrows.rooms-left__arrow.left-arrow
+									img(src="images/rooms/left-arrow.svg" alt="Left Arrow")
+								button.slider-arrows.rooms-right__arrow.right-arrow
+									img(src="images/rooms/right-arrow.svg" alt="Right Arrow")
+						// /slider-wrap
+					// /.container
+				// /.section rooms
+				section.section.rewievs
+					h3.section-title.section__title Отзывы
+					.slider-wrap
+						.section-row.rewievs-slider
+							.rewievs-column.rewievs__column
+								.rewievs-column__card.rewievs-card
+									p.rewievs-text.rewievs-card__text
+										| Первый раз пришлось оставить нашего котика
+										| в гостинице, очень переживали. Администратор Мария каждый день высылала нам фото нашего питомца,
+										| рассказывала, как он себя чувствует.
+										| И мы и котик остались очень довольны!
+									.rewievs-card-info
+										span.rewievs-card-info__span Валерия Гришаева
+										span.rewievs-card-info__span 15 ноября, 2019
+							.rewievs-column.rewievs__column
+								.rewievs-column__card.rewievs-card
+									p.rewievs-text.rewievs-card__text
+										| Гостиницу для питомцев нам посоветовали друзья. Они всегда оставляют
+										| здесь своего
+										| кота, когда уезжают. В “Котейке” очень хорошо заботятся о питомцах, в гостинице очень чисто. Всем рекомендую!
+										| Будем обращаться еще.
+									.rewievs-card-info
+										span.rewievs-card-info__span Екатерина Минаева
+										span.rewievs-card-info__span 10 октября, 2019
+							.rewievs-column.rewievs__column
+								.rewievs-column__card.rewievs-card
+									p.rewievs-text.rewievs-card__text
+										| Мой кот — настоящая привереда, угодить ему сложно. У меня были
+										| особые требования
+										| к уходу за ним, и “Котейка” отлично справились. Я часто наблюдал по видео за питомцем со своего телефона, это
+										| очень удобно.
+									.rewievs-card-info
+										span.rewievs-card-info__span Павел Нечаев
+										span.rewievs-card-info__span 2 августа, 2019
+							.rewievs-column.rewievs__column
+								.rewievs-column__card.rewievs-card
+									p.rewievs-text.rewievs-card__text
+										| Мой кот — настоящая привереда, угодить ему сложно. У меня были
+										| особые требования
+										| к уходу за ним, и “Котейка” отлично справились. Я часто наблюдал по видео за питомцем со своего телефона, это
+										| очень удобно.
+									.rewievs-card-info
+										span.rewievs-card-info__span Павел Нечаев
+										span.rewievs-card-info__span 2 августа, 2019
+						.slider-nav.slider__nav.rewievs-slider__nav
+							button.slider-arrows.rewievs-left__arrow.left-arrow
+								img(src="images/rooms/left-arrow.svg" alt="Left Arrow")
+							button.slider-arrows.rewievs-right__arrow.right-arrow
+								img(src="images/rooms/right-arrow.svg" alt="Right Arrow")
+					// /.slider-wrap
+				// /.section rewievs
+				include template/footer.pug
+		// /.wrapper
+		// Script Library
+		script(src="js/lib/lib.min.js")
+		// Script
+		script(src="js/script/main.min.js")

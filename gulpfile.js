@@ -13,36 +13,28 @@ let gulp         = require('gulp'),
 		imagemin     = require('gulp-imagemin'),
 		pngquant     = require('imagemin-pngquant'),
 		browserSync  = require('browser-sync'),
-		jshint       = require('gulp-jshint')
-		rigger       = require('gulp-rigger');
+		jshint       = require('gulp-jshint'),
+		rigger       = require('gulp-rigger'),
+		plumber      = require('gulp-plumber');
 
 gulp.task('clean', function () {
 	del.sync('build/*');
-	// return del(['build/*']);
 });
-
-// gulp.task('html', function () {
-// 	return gulp.src('src/**/*.html')
-// 		.pipe(gulp.dest('build/'))
-// 		.pipe(browserSync.reload({ stream: true }));
-// });
 
 gulp.task('html', function () {
 	return gulp.src('src/**/*.html')
+		.pipe(plumber())
 		.pipe(rigger())
-		// .pipe(gulpIf(env !== 'dev', minifyHTML()))
 		.pipe(gulp.dest('build/'))
-		.pipe(browserSync.reload({ stream: true }))
+		.pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('libJS', function () {
 	return gulp.src([
-		// 'node_modules/glider-js/glider.min.js',
 		'node_modules/jquery/dist/jquery.min.js',
 		'node_modules/slick-carousel/slick/slick.min.js',
-		// 'node_modules/masonry-layout/dist/masonry.pkgd.min.js',
-		// 'node_modules/typed.js/lib/typed.min.js'
 	])
+		.pipe(plumber())
 		.pipe(concat('lib.js'))
 		.pipe(sourcemaps.init())
 		.pipe(babel({
@@ -56,6 +48,7 @@ gulp.task('libJS', function () {
 
 gulp.task('js', function () {
 	return gulp.src('src/js/**/*.js')
+		.pipe(plumber())
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'))
 		.pipe(sourcemaps.init())
@@ -73,9 +66,9 @@ gulp.task('libCSS', function () {
 	return gulp.src([
 		'node_modules/reset-css/reset.css',
 		'node_modules/slick-carousel/slick/slick.css',
-		// 'node_modules/glider-js/glider.min.css',
 		'node_modules/animate.css/animate.min.css',
 	])
+		.pipe(plumber())
 		.pipe(concat('lib.css'))
 		.pipe(sourcemaps.init())
 		.pipe(cssmin())
@@ -87,6 +80,7 @@ gulp.task('libCSS', function () {
 
 gulp.task('sass', function () {
 	return gulp.src('src/sass/**/*.sass')
+		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
 		.pipe(autoprefixer({

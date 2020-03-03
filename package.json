@@ -7,12 +7,10 @@
     "@babel/runtime": "^7.8.4",
     "animate.css": "^3.7.2",
     "del": "^5.1.0",
-    "glider-js": "^1.7.1",
     "jquery": "^3.4.1",
     "masonry-layout": "^4.2.2",
     "reset-css": "^5.0.1",
-    "slick-carousel": "^1.8.1",
-    "typed.js": "^2.0.11"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

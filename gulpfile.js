@@ -133,7 +133,7 @@ gulp.task('watch', function(){
 gulp.task('browser-sync', function () {
 	browserSync.init({
 		server: {
-			baseDir: "build"
+			baseDir: "build/"
 		},
 		// tunnel: true,
 		host: 'localhost',

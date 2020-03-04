@@ -28,8 +28,8 @@ const myReporter = (errors) => {
 	errors.map(error => console.error(error.message));
 };
 
-gulp.task('pug', function buildpug() {
-	return gulp.src('src/**/*.pug', '!src/**/_*.pug')
+gulp.task('pug', function () {
+	return gulp.src('src/index.pug')
 		.pipe(plumber())
 		.pipe(pugLinter({ reporter: myReporter }))
 		.pipe(pug({

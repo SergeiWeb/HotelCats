@@ -29,14 +29,12 @@ const myReporter = (errors) => {
 };
 
 gulp.task('pug', function buildpug() {
-	return gulp.src('src/**/*.pug')
+	return gulp.src('src/**/*.pug', '!src/**/_*.pug')
 		.pipe(plumber())
 		.pipe(pugLinter({ reporter: myReporter }))
 		.pipe(pug({
 			pretty: true
 		}))
-		// .pipe(htmlValidator())
-		// .pipe(bemValidator())
 		.pipe(gulp.dest('build/'))
 		.pipe(browserSync.reload({ stream: true }));
 });

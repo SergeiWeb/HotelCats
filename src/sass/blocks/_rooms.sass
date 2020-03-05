@@ -4,21 +4,23 @@
 
 	&-column
 		width: 100%
-	&__column
-	&__card
 	&-card
 		display: flex
 		justify-content: space-between
 		align-items: center
 		position: relative
-		padding: 0 50px
 		&__image
+			display: inline-flex
+			max-width: 600px
+		&__info
+			padding: 33px 100px
+			padding-right: 120px
+	&__card
+		padding: 0 50px
 	&__button
 		margin-top: 10px
 	&-info
 		background: $white
-		padding: 33px 100px
-		padding-right: 120px
 		box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25)
 		position: absolute
 		right: 70px
@@ -43,3 +45,18 @@
 				position: absolute
 				background: $yellow
 				border-radius: 50%
+
+
+
+@media screen and (max-width: 868px)
+	.rooms
+		&-card
+			&__info
+				padding: 40px
+			&__image
+				max-width: 440px
+				min-height: 320px
+		&__card
+			padding: 0 5px
+		&-info
+			right: 10px

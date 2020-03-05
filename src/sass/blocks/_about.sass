@@ -3,16 +3,18 @@
 	background-size: auto
 	&-row
 		display: flex
-		justify-content: center
+		justify-content: space-between
 		flex-wrap: wrap
 		margin: 0 -15px
+	&__title
+		margin-bottom: 20px
 	&__column
 		display: flex
 		padding: 0 15px
 		flex: 0 1 33.333%
 		min-width: 370px
 		margin-bottom: 20px
-		&:nth-last-of-type(-n+3)
+		&:nth-last-child(-n+3)
 			margin-bottom: 0
 	&-card
 		display: flex
@@ -35,5 +37,22 @@
 			cursor: pointer
 			box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.1)
 			transform: scale(0.97)
-	&__title
-		margin-bottom: 20px
+
+
+@media screen and (max-width: 1100px)
+	.about
+		&-row
+			justify-content: space-around
+		&__column
+			&:nth-last-child(-n+3)
+				margin-bottom: 30px
+			&:nth-last-child(-n+2)
+				margin-bottom: 0
+
+
+@media screen and (max-width: 768px)
+	.about
+		&__column
+			flex: 0 1 50%
+			min-width: 320px
+			margin-bottom: 30px

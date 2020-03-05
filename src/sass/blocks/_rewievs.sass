@@ -23,6 +23,15 @@
 		+LatoBold
 		font-size: 16px
 		line-height: 140%
+		position: relative
+		&:after
+			content: '“'
+			position: absolute
+			top: 28px
+			left: -40px
+			+LatoRegular
+			font-size: 90px
+			color: $yellow
 	&-card
 		background: $white
 		border-radius: 8px
@@ -37,3 +46,13 @@
 				+LatoRegular
 				font-size: 14px
 				color: $grey
+
+@media screen and (max-width: 768px)
+	.rewievs
+		padding-bottom: 20px
+		&-slider
+			padding-left: 45px
+		&-column
+			max-width: 460px
+			&__card
+				padding: 35px 35px 35px 70px

@@ -35,6 +35,7 @@ gulp.task('pug', function () {
 		.pipe(pug({
 			pretty: true
 		}))
+		.pipe(htmlValidator())
 		.pipe(gulp.dest('build/'))
 		.pipe(browserSync.reload({ stream: true }));
 });

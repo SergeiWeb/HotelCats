@@ -7,10 +7,19 @@ $(window).ready(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		infinite: true,
+		fade: true,
 		dots: true,
 		dotsClass: 'slider__dots',
 		prevArrow: $('.rooms-left__arrow'),
 		nextArrow: $('.rooms-right__arrow'),
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					arrows: false,
+				}
+			}
+		]
 	});
 
 	rewiewsSlider.slick({
@@ -21,6 +30,16 @@ $(window).ready(function() {
 		dotsClass: 'slider__dots rewievs-slider__dots',
 		prevArrow: $('.rewievs-left__arrow'),
 		nextArrow: $('.rewievs-right__arrow'),
+		responsive:[
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+				}
+			}
+		]
 	});
 
 });

@@ -20,6 +20,8 @@ body
 	font-family: 'Lato', sans-serif
 	color: $black
 	overflow-x: hidden
+	&.block
+		overflow: hidden
 
 img
 	display: block
@@ -184,7 +186,7 @@ img
 
 
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 860px)
 	.container
 		max-width: 678px
 		&-lg
@@ -193,7 +195,7 @@ img
 	.section
 		padding-top: 120px
 		&__title
-				margin-bottom: 60px
+			margin-bottom: 60px
 
 	.slider
 		&-nav
@@ -203,3 +205,25 @@ img
 			li
 				width: 12px
 				height: 12px
+
+
+@media screen and (max-width: 450px)
+	.container
+		max-width: 290px
+		&-lg
+			max-width: 290px
+
+	.header
+		margin-top: 62px
+
+
+	.section
+		padding-top: 70px
+		&__title
+			font-size: 28px
+			margin-bottom: 40px
+
+
+	.slider
+		&__dots
+			margin-top: 25px

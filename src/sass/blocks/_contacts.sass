@@ -3,6 +3,7 @@
 	&-wrap
 		display: flex
 		justify-content: center
+		flex-wrap: wrap
 	&-info
 		background: $yellow
 		width: 40%
@@ -37,7 +38,7 @@
 				border-radius: 50%
 				transition: all 0.2s linear
 				&:hover
-					transform: scale(.9)
+					transform: scale(0.9)
 	&-map
 		width: 60%
 		iframe
@@ -45,10 +46,12 @@
 			height: 100%
 
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 860px)
 	.contacts
 		&-info
 			width: 48%
+			&__title
+				font-size: 28px
 		&__info
 			padding: 60px 35px 60px 40px
 		&-connect
@@ -58,3 +61,20 @@
 					height: 24px
 		&-map
 			width: 52%
+
+
+@media screen and (max-width: 450px)
+	.contacts
+		&-info
+			width: 100%
+		&__info
+			padding: 40px 15px
+		&-connect
+			margin-bottom: 30px
+			&-title
+				font-size: 15px
+			&__text
+				font-size: 15px
+		&-map
+			width: 100%
+			height: 300px

@@ -25,6 +25,9 @@
 		border-radius: 8px
 		transition: all .4s ease-out
 		&__img
+			width: 91px
+			height: 91px
+			overflow: hidden
 			border-radius: 50%
 			margin-bottom: 35px
 		&__title
@@ -50,9 +53,31 @@
 				margin-bottom: 0
 
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 860px)
 	.about
 		&__column
 			flex: 0 1 50%
 			min-width: 320px
 			margin-bottom: 30px
+
+
+@media screen and (max-width: 450px)
+	.about
+		&-row
+			justify-content: center
+		&__column
+			width: 100%
+			max-width: 280px
+			&:nth-last-child(-n+2)
+				margin-bottom: 30px
+			&:nth-last-child(-n+1)
+				margin-bottom: 0
+		&-card
+			padding: 25px
+			&__img
+				width: 60px
+				height: 60px
+			&__title
+				font-size: 18px
+			&__text
+				font-size: 15px

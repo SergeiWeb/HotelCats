@@ -16,6 +16,7 @@
 	&-info
 		display: flex
 		justify-content: space-between
+		flex-wrap: wrap
 		align-items: center
 		&__rights
 			+LatoRegular
@@ -36,3 +37,24 @@
 			+LatoRegular
 			font-size: 12px
 			color: $grey
+
+
+@media screen and (max-width: 450px)
+	.footer
+		&:after
+			top: 167px
+		&__nav
+			&__logo
+				margin-bottom: 15px
+			&-ul
+				text-align: left
+				li
+					margin: 10px 30px 10px 0
+					width: 38%
+				&__link
+
+		&__info
+			padding-top: 15px
+		&-info
+			&__rights
+				margin-bottom: 20px

@@ -1,12 +1,33 @@
-nav.nav
-	a.nav-logo(href="#")
+nav.nav.navbar-nav
+	a.nav__logo(href="#")
 		img(src="images/header/logo.svg" alt="Logotype")
-	ul.nav-ul
-		li
-			a.nav-ul__link.nav__link(href="#") Почему мы?
-		li
-			a.nav-ul__link.nav__link(href="#") Номера
-		li
-			a.nav-ul__link.nav__link(href="#") Отзывы
-		li
-			a.nav-ul__link.nav__link(href="#") Как нас найти
+	.navbar-menu
+		.navbar-container
+			ul.nav-ul.navbar-nav-ul
+				li
+					a.nav-ul__link.nav__link(href="#") Почему мы?
+				li
+					a.nav-ul__link.nav__link(href="#") Номера
+				li
+					a.nav-ul__link.nav__link(href="#") Отзывы
+				li
+					a.nav-ul__link.nav__link(href="#") Как нас найти
+
+			ul.navbar-contact
+				li
+					a(href="tel:88003335599") 8 (800) 333-55-99
+				li
+					ul.contacts-connect-ul
+						li.contacts-connect-ul__li
+							a.contacts-connect-ul__link(href="#")
+								img(src="images/contacts/facebook.svg", alt="Facebook")
+						li.contacts-connect-ul__li
+							a.contacts-connect-ul__link(href="#")
+								img(src="images/contacts/instagram.svg", alt="Instagram")
+						li.contacts-connect-ul__li
+							a.contacts-connect-ul__link(href="#")
+								img(src="images/contacts/vk.svg", alt="VK")
+
+
+	button.navbar-burger
+		span.navbar-burger__line

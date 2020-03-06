@@ -2,7 +2,8 @@
 	background: url('../../images/header/header-bg.jpg') center no-repeat
 	background-size: cover
 	padding: 153px 0
-
+	&-contact
+		display: none
 	&__city
 		+LatoRegular
 		font-size: 14px
@@ -26,8 +27,17 @@
 			color: $white
 			background: $orange
 
-@media screen and (max-width: 768px)
+
+@media screen and (max-width: 860px)
 	.hero
 		background: url('../../images/header/header-tablet-bg.jpg') center no-repeat
+		background-size: cover
 		text-align: center
 		padding: 140px 0 530px
+
+
+@media screen and (max-width: 450px)
+	.hero
+		padding: 50px 0 230px
+		&__title
+			font-size: 44px

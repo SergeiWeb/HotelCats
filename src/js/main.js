@@ -42,4 +42,16 @@ $(window).ready(function() {
 		]
 	});
 
+
+	// Burger
+
+	let burgerMenu = $('.navbar-burger'),
+			navbar     = $('.navbar');
+
+	burgerMenu.on('click', function() {
+		navbar.toggleClass('active');
+		$(this).toggleClass('active');
+		$('body').toggleClass('block');
+	});
+
 });

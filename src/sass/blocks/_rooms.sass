@@ -60,3 +60,29 @@
 			padding: 0 5px
 		&-info
 			right: 10px
+
+
+@media screen and (max-width: 450px)
+	.rooms
+		&-card
+			display: flex
+			flex-direction: column
+			&__info
+				padding: 25px
+			&__image
+				max-width: 290px
+				min-height: 192px
+		&-info
+			position: relative
+			display: block
+			top: -20px
+			right: 0
+			border-top-right-radius: 0
+			border-top-left-radius: 0
+			&__title
+				font-size: 20px
+			&__li
+				font-size: 15px
+				margin: 17px 0
+		&__button
+			margin-top: 8px

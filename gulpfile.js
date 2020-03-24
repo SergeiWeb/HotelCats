@@ -1,24 +1,24 @@
 "use strict ";
 
-let gulp          = require('gulp'),
-		autoprefixer  = require('gulp-autoprefixer'),
-		babel         = require('gulp-babel'),
-		uglify        = require('gulp-uglify'),
-		sass          = require('gulp-sass'),
-		sourcemaps    = require('gulp-sourcemaps'),
-		concat        = require('gulp-concat'),
-		rename        = require('gulp-rename'),
-		del           = require('del'),
-		cssmin        = require('gulp-clean-css'),
-		imagemin      = require('gulp-imagemin'),
-		pngquant      = require('imagemin-pngquant'),
-		browserSync   = require('browser-sync'),
-		jshint        = require('gulp-jshint'),
-		plumber       = require('gulp-plumber'),
-		pug           = require('gulp-pug'),
-		pugLinter     = require('gulp-pug-linter'),
-		htmlValidator = require('gulp-w3c-html-validator'),
-		bemValidator  = require('gulp-html-bem-validator');
+let gulp = require('gulp'),
+	autoprefixer = require('gulp-autoprefixer'),
+	babel = require('gulp-babel'),
+	uglify = require('gulp-uglify'),
+	sass = require('gulp-sass'),
+	sourcemaps = require('gulp-sourcemaps'),
+	concat = require('gulp-concat'),
+	rename = require('gulp-rename'),
+	del = require('del'),
+	cssmin = require('gulp-clean-css'),
+	imagemin = require('gulp-imagemin'),
+	pngquant = require('imagemin-pngquant'),
+	browserSync = require('browser-sync'),
+	jshint = require('gulp-jshint'),
+	rigger = require('gulp-rigger'),
+	plumber = require('gulp-plumber'),
+	pug = require('gulp-pug'),
+	pugLinter = require('gulp-pug-linter'),
+	htmlValidator = require('gulp-w3c-html-validator');
 
 gulp.task('clean', function () {
 	del.sync('build/*');
@@ -28,7 +28,7 @@ const myReporter = (errors) => {
 	errors.map(error => console.error(error.message));
 };
 
-gulp.task('pug', function () {
+gulp.task('html', function () {
 	return gulp.src('src/index.pug')
 		.pipe(plumber())
 		.pipe(pugLinter({ reporter: myReporter }))
@@ -39,6 +39,14 @@ gulp.task('pug', function () {
 		.pipe(gulp.dest('build/'))
 		.pipe(browserSync.reload({ stream: true }));
 });
+
+// gulp.task('html', function () {
+// 	return gulp.src('src/**/*.html')
+// 		.pipe(plumber())
+// 		.pipe(rigger())
+// 		.pipe(gulp.dest('build/'))
+// 		.pipe(browserSync.reload({ stream: true }));
+// });
 
 gulp.task('libJS', function () {
 	return gulp.src([
@@ -108,21 +116,21 @@ gulp.task('sass', function () {
 gulp.task('image', function () {
 	return gulp.src('src/images/**/*.{jpg,jpeg,png,svg,gif}')
 		.pipe(imagemin({
-				progressive: true,
-				use: [pngquant()],
-				interlaced: true
+			progressive: true,
+			use: [pngquant()],
+			interlaced: true
 		}))
 		.pipe(gulp.dest('build/images'))
 		.pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('fonts', function() {
+gulp.task('fonts', function () {
 	return gulp.src('src/fonts/**/*.*')
 		.pipe(gulp.dest('build/fonts'));
 });
 
-gulp.task('watch', function(){
-	gulp.watch('src/**/*.pug', gulp.parallel('pug'));
+gulp.task('watch', function () {
+	gulp.watch('src/**/*.html', gulp.parallel('html'));
 	gulp.watch('src/sass/**/*.sass', gulp.parallel('sass'));
 	gulp.watch('src/js/**/*.js', gulp.parallel('js'));
 	gulp.watch('src/images/**/*.{jpg,jpeg,png,svg,gif}', gulp.parallel('image'));
@@ -146,4 +154,4 @@ gulp.task('browser-sync', function () {
 // gulp.task('default', gulp.series('build', 'watch', gulp.parallel('html')));
 
 gulp.task('build', gulp.series('clean'));
-gulp.task('default', gulp.parallel('build', 'pug', 'sass', 'fonts', 'image', 'libCSS', 'libJS', 'js', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('build', 'html', 'sass', 'fonts', 'image', 'libCSS', 'libJS', 'js', 'browser-sync', 'watch'));
